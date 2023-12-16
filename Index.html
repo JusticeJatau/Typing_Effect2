@@ -1,0 +1,88 @@
+<!--Made By Justice J.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type And Print</title>
+</head>
+<body>
+    <div class="container">
+      <div>
+        <span class="text">Input anything to display it.</span>
+      </div>
+    </div>
+    
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            height: 100vh;
+            background: #010718;
+            display: flex;
+            place-content: center;
+        }
+        .container{
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 2px solid #fff; */
+            width: 700px;
+            padding: 5px 10px;
+            overflow: hidden;
+            -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(225,225,225,.5));
+        }
+        .container .text{
+            position: relative;
+            text-justify: center;
+            color: #4070f4;
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        @media (max-width:500px) {
+            .container{
+                width: 400px;
+            }
+            .container .text{
+                font-size: 20px;
+            }
+        }     
+
+    </style>
+
+    <script>
+        alert("Typing Effect with HTML, CSS and JS")
+        alert("Made by Justice J.")
+        alert("Enjoy👌😁")
+
+        const textE = document.querySelector(".text")
+        textE.textContent = ""
+
+        const text = "Welcome developers, my name is justice and am a front end developer, it's nice meeting you in code. Feel free to explore and have fun with it. 👌😁."
+        const len = text.length
+
+        var i = 0
+
+        const animateText = () =>{
+            setTimeout(() => {
+                if(i < len){
+                  textE.textContent += text[i]
+                  i++
+                } 
+            }, 50);
+        }
+
+        animateText()
+        setInterval(animateText, 100);
+
+    </script>
+</body>
+</html>
